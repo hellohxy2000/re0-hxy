@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱心与翅膀</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #ffe6e6; /* 背景颜色 */
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+    }
+
+    /* 爱心样式 */
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: #ff4d4d;
+      transform: rotate(-45deg);
+      margin: 30px; /* 添加左右间距 */
+      animation: heartbeat 1s ease-in-out infinite; /* 调整动画时长 */
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #ff4d4d;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 50px;
+    }
+
+    /* 翅膀样式 */
+    .wing {
+      position: relative;
+      width: 100px;
+      height: 160px;
+      margin: -40px; 
+      animation: wing-flap 1s ease-in-out infinite; /* 调整动画时长 */
+      z-index: -1; 
+    } 
+
+    .wing.left {
+      animation-name: left-wing-flap; /* 左翅膀动画 */
+    }
+
+    .wing.right {
+      animation-name: right-wing-flap; /* 右翅膀动画 */
+    }
+
+    .wing .feather {
+      position: absolute;
+      width: 95px;
+      height: 21px;
+      background-color: white;
+      border: 4px solid black;
+      border-radius: 90px; 
+    }
+
+    /* 左翅膀羽毛 */
+    .wing.left .feather:nth-child(1) {
+      top: 0;
+      left: 10px;
+      transform: rotate(-30deg);
+    }
+
+    .wing.left .feather:nth-child(2) {
+      top: 20px;
+      left: 0;
+      transform: rotate(-15deg);
+    }
+
+    .wing.left .feather:nth-child(3) {
+      top: 35px;
+      left: -25px;
+      transform: rotate(-5deg);
+    }
+
+    /* 右翅膀羽毛 */
+    .wing.right .feather:nth-child(1) {
+      top: 0;
+      right: 10px;
+      transform: rotate(30deg);
+    }
+
+    .wing.right .feather:nth-child(2) {
+      top: 20px;
+      right: 0;
+      transform: rotate(15deg);
+    }
+
+    .wing.right .feather:nth-child(3) {
+      top: 35px;
+      right: -25px;
+      transform: rotate(5deg);
+    }
+
+    /* 文字样式 */
+    h1 {
+      color: black;
+      font-size: 24px;
+      margin-top: 50px;
+    }
+
+    /* 心跳动画 */
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      51.2% {
+        transform: scale(1.1) rotate(-45deg); /* 调整心跳幅度 */
+      }
+    }
+
+    /* 左翅膀动画 */
+    @keyframes left-wing-flap {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(-10deg); /* 向上摆动 */
+      }
+      50% {
+        transform: rotate(-20deg); /* 向上摆动 */
+      }
+      75% {
+        transform: rotate(-10deg); /* 向上摆动 */
+      }
+    }
+
+    /* 右翅膀动画 */
+    @keyframes right-wing-flap {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(10deg); /* 向下摆动 */
+      }
+      50% {
+        transform: rotate(20deg); /* 向下摆动 */
+      }
+      75% {
+        transform: rotate(10deg); /* 向下摆动 */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- 右翅膀 -->
+    <div class="wing right">
+      <div class="feather"></div>
+      <div class="feather"></div>
+      <div class="feather"></div>
+    </div>
+    
+    <!-- 爱心 -->
+    <div class="heart"></div>
+    
+    <!-- 左翅膀 -->
+    <div class="wing left">
+      <div class="feather"></div>
+      <div class="feather"></div>
+      <div class="feather"></div>
+    </div>
+  </div>
+  <h1>送给最特别的唐瑜曼小宝贝</h1>
+</body>
+</html>
